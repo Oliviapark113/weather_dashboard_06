@@ -1,0 +1,44 @@
+body{
+   margin:0;
+   padding:0;
+  height: 100vh;
+  background: linear-gradient(to bottom, rgb(47,150,163), rgb(48, 62,143));
+  font-family: 'Montserrat', sans-serif;
+  color: whitesmoke;
+
+}
+.container{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+    margin: 10 px; 
+    padding:10 px;
+    border: solid whitesmoke 1px;
+    border-radius: 5px;
+    align-items: center;
+
+}
+
+.input-container input {
+    margin: 7px;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.input-container input:hover{
+    background-color:#e3f2fd;
+}
+
+
+.btn-sm{
+    color: whitesmoke;
+    font-size: 18px;
+    cursor: pointer;
+}

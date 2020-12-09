@@ -9,6 +9,8 @@
     <script src="https://kit.fontawesome.com/09ac4049bb.js" crossorigin="anonymous" defer="defer"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"
     media="all">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <script type="text" src="moment.js"></script>
 </head>
@@ -21,27 +23,33 @@
       <div class="container">
 
       <div class="row">
+    
 
-        <div class="col-lg-6 col-lg-offset-2 text-left">
-            <input type="text" placeholder="City"><button type="button" class="query_btn btn btn-default btn-sm">Search</button><br>
+        <div class="col-lg-3 col-lg-offset-2 text-left mg-3 input-container">
+            <div class="row city-search">
+            <input type="text" placeholder="City">
+            <button type="button" class="query_btn btn btn-default btn-sm">Search</button><br>
+            </div>
+            <div class="row zip-search">
             <input type="text" placeholder="Zip Code"><button type="button" class="query_btn btn btn-default btn-sm">Search</button><br>
+           </div>
         </div>
 
-        <div class="col-lg-6 col-lg-offset-2 text-left">
-            <h2>Date:<span id="current-date"></span></h2>
-            <h2>City: <span id="city"></span></h2>
-            <h2>Main Weather: <span id="main_weather"></span></h2>
-            <h2>Description: <span id="description_weather"></span></h2>
+        <div class="col-lg-9 col-lg-offset-2 text-left">
+            <h3>Date:<span id="current-date"></span></h3>
+            <h3>City: <span id="city"></span></h3>
+            <h3>Main Weather: <span id="main_weather"></span></h3>
+            <h3>Description: <span id="description_weather"></span></h3>
             <img id="weather_image" src="">
-            <h2>Temperature: <span id="temperature"></span></h2>
+            <h3>Temperature: <span id="temperature"></span></h3>
             <button id="convert-to-celsius">CONVERT TO CELSIUS</button>
             <button id="convert-to-fahrenheit">CONVERT TO FAHRENHEIT</button>
             <!-- <button id="reset">RESET</button> -->
-            <h2>Pressure: <span id="pressure"></span></h2>
-            <h2>Humidity: <span id="humidity"></span></h2>
+            <h3>Pressure: <span id="pressure"></span></h3>
+            <h3>Humidity: <span id="humidity"></span></h3>
             <div class="col-lg-12 forecast text-center">
                 <div class="row 5day-forecast">
-                    <h2>5 day forecast</h2>
+                    <h3>5 day forecast</h3>
                 </div>
                 <div class="row 5day-weather-data">
                     <div id="day1">
