@@ -92,15 +92,15 @@ $(".query_btn").on("click",function(){
             }
             fahrenheit = true;
         });
-        var arr =[ 1,2,3,4,5,6,7,8,9,10]
-        // for (var i = 0; i < arr.length; i += 2) {
-        //     console.log(arr[i])
-        //  } 
+//         var arr =[ 1,2,3,4,5,6,7,8,9,10]
+//         // for (var i = 0; i < arr.length; i += 2) {
+//         //     console.log(arr[i])
+//         //  } 
        
 
-for (var i = 3; i < arr.length; i += 2) {
-   console.log(arr[i])
-}
+// for (var i = 3; i < arr.length; i += 2) {
+//    console.log(arr[i])
+// }
       
 
 
