@@ -4,7 +4,7 @@ body{
   height: 100vh;
   background: linear-gradient(rgb(47,150,163), rgb(48, 62,143));
   font-family: 'Montserrat', sans-serif;
-  color: whitesmoke;
+  color:#fafafa;
   box-sizing: border-box;
 
 }
@@ -16,7 +16,7 @@ body{
 }
 
 .navbar h1{
-  color: whitesmoke; 
+  color: #fafafa;
   text-align: center;
   
  
@@ -35,26 +35,29 @@ body{
     flex-direction: column;
     margin-top: 10px;
     padding:0px;
-    /* border: solid whitesmoke 1px;
-    border-radius: 5px; */
     align-items: center;
 
 }
 
 .input-container input {
     margin: 0px;
-    width: 95%;
-    border-radius: 5px;
+    padding:8px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 14px 0px 14px 0px;
+    border-bottom: solid 3px #ef5350;
     cursor: pointer;
+    background-color:#fafafa;
 }
 
-.input-container input:hover{
-    background-color:#e3f2fd;
+.input-container input:focus{
+    background-color:#e0f7fa;
 }
 
 
 .btn-sm{
-    color: whitesmoke;
+    color: #fafafa;
     font-size: 18px;
     cursor: pointer;
 }
@@ -62,7 +65,8 @@ body{
 .other-city-container{
     margin:0;
     padding:0;
-    
+    /* border: solid #fafafa .5px;
+    border-radius: 5px; */
 }
 
  .other-cities table{
@@ -70,23 +74,30 @@ body{
     flex-direction: column;
     margin-top:20px;
     padding:0px;
-    border: solid whitesmoke .5px;
-    border-radius: 5px;
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
 
 }
 
   .other-cities tr {
     /* border-bottom: solid whitesmoke 1px; */
-    padding:10px;
+    padding:15px;
     width: 100%;
+    
+} 
+
+.other-cities td {
+    background-color:transparent;
+    background-clip: padding-box;
+    border: solid #fafafa .5px;
+     width: 100%;
+    border-radius: 6px;
     
 } 
 
 
 .other-cities  a{
-    color:whitesmoke;
+    color:#fafafa;
     text-align: center;
 } 
 
@@ -97,7 +108,7 @@ body{
 }
 
 .city-weather-container {
-    border: solid whitesmoke 1px;
+    border: solid #fafafa 1px;
     border-radius: 5px;
     margin:10px;
     padding:10px;
@@ -109,16 +120,25 @@ body{
 
 {
     background-color:#ef5350;
-    color: whitesmoke;
-    border-radius: 3px;
+    color: #fafafa;
+    border: none;
+    outline:none;
+    border-radius: 14px 0px 14px 0px;
+    border-bottom: solid 3px #fafafa;
     font-size:14px;
     margin: 10px;
 
 }
 
+/* #convert-to-celsius,
+#convert-to-fahrenheit:focus{
+  background-color:#2979ff; 
+
+} */
+
 
 .daily{
-    border: solid whitesmoke 1px;
+    border: solid #fafafa 1px;
     border-radius: 5px;
     padding :5px; 
     margin:5px;
