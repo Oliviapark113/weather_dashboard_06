@@ -1,16 +1,16 @@
 console.log("hello")
 
  var appID = "80b3e8a297999f6bc99d97f895ecd144"
-        
-        // }
+//set global variable..
  var weather ;
  var forecast ;
  var zipCodeweather;
  var query_param;
- 
+
 $(".query_btn").on("click",function(){
 
      query_param =$(this).prev().val();
+
     if($(this).prev().attr("placeholder") == "City"){
          
          weather ="http://api.openweathermap.org/data/2.5/weather?q=" + query_param +"&units=imperial"+"&appid=" + appID;
@@ -23,8 +23,10 @@ $(".query_btn").on("click",function(){
     }
     else if($(this).prev().attr("placeholder")=="Zip Code"){
          zipCodeweather ="http://api.openweathermap.org/data/2.5/weather?zip=" + query_param +"&units=imperial"+"&appid=" + appID;
+
+         forecast ="http://api.openweathermap.org/data/2.5/forecast?q=" + query_param +"&units=imperial"+"&APPID=" + appID;
         
-        getWeatherData()
+        getZipcodeWeatherData()
         getForecastData()
     }
 });
