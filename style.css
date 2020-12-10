@@ -33,8 +33,8 @@ body{
 .input-container{
     display: flex;
     flex-direction: column;
-    margin: 0 px; 
-    padding:0 px;
+    margin-top: 10px;
+    padding:0px;
     /* border: solid whitesmoke 1px;
     border-radius: 5px; */
     align-items: center;
@@ -42,9 +42,9 @@ body{
 }
 
 .input-container input {
-    margin: 7px;
-    width: 100%;
-    border-radius: 3px;
+    margin: 0px;
+    width: 95%;
+    border-radius: 5px;
     cursor: pointer;
 }
 
@@ -96,7 +96,7 @@ body{
 
 }
 
-.city-weather{
+.city-weather-container {
     border: solid whitesmoke 1px;
     border-radius: 5px;
     margin:10px;
@@ -123,5 +123,7 @@ body{
     padding :5px; 
     margin:5px;
     text-align: left;
+    background-color:rgba(168, 63, 63, 0.2) ;
+ 
 
 }
