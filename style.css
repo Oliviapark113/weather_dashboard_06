@@ -8,13 +8,28 @@ body{
   box-sizing: border-box;
 
 }
+
+.navbar{
+    padding: 10px;
+    background-color:#263238;
+ 
+}
+
+.navbar h1{
+  color: whitesmoke; 
+  text-align: center;
+  
+ 
+}
+
+
 .container{
     margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-°
+
 .input-container{
     display: flex;
     flex-direction: column;
@@ -74,7 +89,8 @@ body{
 .daily{
     border: solid whitesmoke 1px;
     border-radius: 5px;
-    padding :10px; 
-    margin:10px;
+    padding :5px; 
+    margin:5px;
+    text-align: left;
 
 }
