@@ -6,7 +6,7 @@ $("#current-date").text(" "+now)
 
 var appID = "80b3e8a297999f6bc99d97f895ecd144"
 var city = "new york"
-var chicago = $("#city-chicago")
+
 
     //?key = value&key=value&key=value
 

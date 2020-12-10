@@ -8,20 +8,56 @@ var appID = "80b3e8a297999f6bc99d97f895ecd144"
 
     //?key = value&key=value&key=value
 
+    // onclick on the search {
+    //     get the city value from the input
+    //     call the weather function passing the city value as a variable
+    //     call the forecast function passing the city value as a variable
+    // }
+    
+    // onclick on a history button {
+    //    get the city value from the button
+    //     call the weather function passing the city value as a variable
+    //     call the forecast function passing the city value as a variable
+    // }
+    // weather(city){
+    
+    // }
+    
+    // forecast(city0{
+        
+        // }
+     var weather ="http://api.openweathermap.org/data/2.5/weather?q=" + query_param +"&units=imperial"+"&appid=" + appID;
+
+     var forecast ="http://api.openweathermap.org/data/2.5/forecast?q=" + query_param +"&units=imperial"+"&APPID=" + appID;
+
 $(".query_btn").on("click",function(){
     var query_param =$(this).prev().val();
     if($(this).prev().attr("placeholder") == "City"){
-        var weather ="http://api.openweathermap.org/data/2.5/weather?q=" + query_param +"&units=imperial"+"&appid=" + appID;
-        console.log(weather)
-        var forecast ="http://api.openweathermap.org/data/2.5/forecast?q=" + query_param +"&units=imperial"+"&APPID=" + appID;
-        console.log(forecast)
-
+         
+        $.ajax({
+            url: weather,
+            method: "GET"
+        }).then(
+            
+        )
+       
+       
+        getWeatherData()
+        getForecastData()
     }
     else if($(this).prev().attr("placeholder")=="Zip Code"){
-        var weather ="http://api.openweathermap.org/data/2.5/weather?zip=" + query_param +"&units=imperial"+"&appid=" + appID;
-        console.log(weather)
+        var zipCodeweather ="http://api.openweathermap.org/data/2.5/weather?zip=" + query_param +"&units=imperial"+"&appid=" + appID;
+        
+        getWeatherData()
+        getForecastData()
     }
+});
+
+function  getWeatherData() {
     $.getJSON(weather, function(json){
+
+         weather ="http://api.openweathermap.org/data/2.5/weather?q=" + query_param +"&units=imperial"+"&appid=" + appID;
+       
         $("#city").text(json.name);
         $("#main_weather").text(json.weather[0].main);
         $("#description_weather").text(json.weather[0].description);
@@ -30,7 +66,28 @@ $(".query_btn").on("click",function(){
         $("#pressure").text(json.main.pressure);
         $("#humidity").text(json.main.humidity);
     })
+}
+
+function  getZipcodeWeatherData() {
+    $.getJSON(zipCodeweather, function(json){
+         
+        zipCodeweather ="http://api.openweathermap.org/data/2.5/weather?zip=" + query_param +"&units=imperial"+"&appid=" + appID;
+        
+       
+        $("#city").text(json.name);
+        $("#main_weather").text(json.weather[0].main);
+        $("#description_weather").text(json.weather[0].description);
+        $("#weather_image").attr("src", "http://openweathermap.org/img/w/" + json.weather[0].icon + ".png");
+        $("#temperature").text(json.main.temp);
+        $("#pressure").text(json.main.pressure);
+        $("#humidity").text(json.main.humidity);
+    })
+}
+
+function getForecastData(){
     $.getJSON(forecast, function(json){
+
+         forecast ="http://api.openweathermap.org/data/2.5/forecast?q=" + query_param +"&units=imperial"+"&APPID=" + appID;
           
       for (var i=7; i<json.list.length; i+=8 ){
        
@@ -62,10 +119,10 @@ $(".query_btn").on("click",function(){
            $("#day5-humidity").text("Humidity: " +json.list[39].main.humidity +" %")
 
       }
-     
-     
-    })
     });
+     
+}
+   
     
  
 
