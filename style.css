@@ -83,9 +83,11 @@ body{
 
 
 
-.other-city-container a{
+.other-cities-btn
+{
     color:#fafafa;
-    text-align: center;
+    text-align: left;
+    padding:0px;
 } 
 
 .weather-container{
