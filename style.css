@@ -49,6 +49,7 @@ body{
     border-bottom: solid 3px #ef5350;
     cursor: pointer;
     background-color:#fafafa;
+    transition: 0.2s ease-out;
 }
 
 .input-container input:focus{
@@ -69,34 +70,35 @@ body{
     border-radius: 5px; */
 }
 
- .other-cities table{
+ .other-city-container table{
     display: flex;
     flex-direction: column;
     margin-top:20px;
     padding:0px;
     width: 100%;
     border-collapse: separate;
-
+    border: solid #fafafa 1px;
+    border-radius: 5px;
 }
 
-  .other-cities tr {
-    /* border-bottom: solid whitesmoke 1px; */
+  .other-city-container tr {
+    /* border: solid  #fafafa 1px; */
     padding:15px;
     width: 100%;
     
 } 
 
-.other-cities td {
+.other-city-container td {
     background-color:transparent;
     background-clip: padding-box;
-    border: solid #fafafa .5px;
+    /* border: solid #fafafa .5px; */
      width: 100%;
-    border-radius: 6px;
+    /* border-radius: 5px; */
     
 } 
 
 
-.other-cities  a{
+.other-city-container a{
     color:#fafafa;
     text-align: center;
 } 
@@ -127,14 +129,9 @@ body{
     border-bottom: solid 3px #fafafa;
     font-size:14px;
     margin: 10px;
+    transition: 0.2s ease-out;
 
 }
-
-/* #convert-to-celsius,
-#convert-to-fahrenheit:focus{
-  background-color:#2979ff; 
-
-} */
 
 
 .daily{
