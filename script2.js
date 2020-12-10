@@ -1,52 +1,28 @@
 console.log("hello")
-// var currentHour = moment().format('LT');
-// var now = moment().format('LLL');
-// console.log(now)
-// $("#current-date").text(now)
 
-var appID = "80b3e8a297999f6bc99d97f895ecd144"
-
-    //?key = value&key=value&key=value
-
-    // onclick on the search {
-    //     get the city value from the input
-    //     call the weather function passing the city value as a variable
-    //     call the forecast function passing the city value as a variable
-    // }
-    
-    // onclick on a history button {
-    //    get the city value from the button
-    //     call the weather function passing the city value as a variable
-    //     call the forecast function passing the city value as a variable
-    // }
-    // weather(city){
-    
-    // }
-    
-    // forecast(city0{
+ var appID = "80b3e8a297999f6bc99d97f895ecd144"
         
         // }
-     var weather ="http://api.openweathermap.org/data/2.5/weather?q=" + query_param +"&units=imperial"+"&appid=" + appID;
-
-     var forecast ="http://api.openweathermap.org/data/2.5/forecast?q=" + query_param +"&units=imperial"+"&APPID=" + appID;
-
+ var weather ;
+ var forecast ;
+ var zipCodeweather;
+ var query_param;
+ 
 $(".query_btn").on("click",function(){
-    var query_param =$(this).prev().val();
+
+     query_param =$(this).prev().val();
     if($(this).prev().attr("placeholder") == "City"){
          
-        $.ajax({
-            url: weather,
-            method: "GET"
-        }).then(
-            
-        )
+         weather ="http://api.openweathermap.org/data/2.5/weather?q=" + query_param +"&units=imperial"+"&appid=" + appID;
+
+         forecast ="http://api.openweathermap.org/data/2.5/forecast?q=" + query_param +"&units=imperial"+"&APPID=" + appID;
        
        
         getWeatherData()
         getForecastData()
     }
     else if($(this).prev().attr("placeholder")=="Zip Code"){
-        var zipCodeweather ="http://api.openweathermap.org/data/2.5/weather?zip=" + query_param +"&units=imperial"+"&appid=" + appID;
+         zipCodeweather ="http://api.openweathermap.org/data/2.5/weather?zip=" + query_param +"&units=imperial"+"&appid=" + appID;
         
         getWeatherData()
         getForecastData()
@@ -122,9 +98,6 @@ function getForecastData(){
     });
      
 }
-   
-    
- 
 
    
     var fahrenheit = true;
@@ -150,8 +123,3 @@ function getForecastData(){
         });
 
       
-
-
-
-
-
