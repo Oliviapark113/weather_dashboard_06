@@ -6,14 +6,15 @@ $("#current-date").text(" "+now)
 
 var appID = "80b3e8a297999f6bc99d97f895ecd144"
 var city = "new york"
+var chicago = $("#city-chicago")
 
     //?key = value&key=value&key=value
 
 
         var weather ="http://api.openweathermap.org/data/2.5/weather?q=" +city+"&units=imperial"+"&appid=" + appID;
-        console.log(weather)
+        
         var forecast ="http://api.openweathermap.org/data/2.5/forecast?q=" +city+"&units=imperial"+"&APPID=" + appID;
-        console.log(forecast)
+       
 
   
     
