@@ -80,14 +80,11 @@ body{
     border-radius: 5px; */
 }
 
-
-
-
-.other-cities-btn
+.othercities
 {
     color:#fafafa;
     text-align: left;
-    padding:0px;
+    padding:2px;
 } 
 
 .weather-container{
