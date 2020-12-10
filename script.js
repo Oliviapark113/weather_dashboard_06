@@ -39,31 +39,31 @@ $(".query_btn").on("click",function(){
         //    console.log(json.list[31])
         //    console.log(json.list[39])
         
-           $("#day1-date").text(json.list[7].dt_txt);
+           $("#day1-date").text("Date: "+json.list[7].dt_txt);
            $("#day1-icon").attr("src",  "http://openweathermap.org/img/w/" + json.list[7].weather[0].icon + ".png");
-           $("#day1-temp").text(json.list[7].main.temp)
-           $("#day1-humidity").text(json.list[7].main.humidity)
+           $("#day1-temp").text("Temp: "+json.list[7].main.temp+ " °F")
+           $("#day1-humidity").text("Humidity: "+json.list[7].main.humidity+ " %")
 
-           $("#day2-date").text(json.list[15].dt_txt);
+           $("#day2-date").text("Date: "+json.list[15].dt_txt);
            $("#day2-icon").attr("src",  "http://openweathermap.org/img/w/" + json.list[15].weather[0].icon + ".png");
-           $("#day2-temp").text(json.list[15].main.temp)
-           $("#day2-humidity").text(json.list[15].main.humidity)
+           $("#day2-temp").text("Temp: "+json.list[15].main.temp+ " °F")
+           $("#day2-humidity").text("Humidity: "+json.list[15].main.humidity+ " %")
 
 
-           $("#day3-date").text(json.list[23].dt_txt);
+           $("#day3-date").text("Date: "+json.list[23].dt_txt);
            $("#day3-icon").attr("src",  "http://openweathermap.org/img/w/" + json.list[23].weather[0].icon + ".png");
-           $("#day3-temp").text(json.list[23].main.temp)
-           $("#day3-humidity").text(json.list[23].main.humidity)
+           $("#day3-temp").text("Temp: "+json.list[23].main.temp+ " °F")
+           $("#day3-humidity").text("Humidity: "+json.list[23].main.humidity + " %")
 
-           $("#day4-date").text(json.list[31].dt_txt);
+           $("#day4-date").text("Date: "+json.list[31].dt_txt);
            $("#day4-icon").attr("src",  "http://openweathermap.org/img/w/" + json.list[31].weather[0].icon + ".png");
-           $("#day4-temp").text(json.list[31].main.temp)
-           $("#day4-humidity").text(json.list[31].main.humidity)
+           $("#day4-temp").text("Temp: "+ json.list[31].main.temp+ " °F")
+           $("#day4-humidity").text("Humidity: "+json.list[31].main.humidity + " %")
 
-           $("#day5-date").text(json.list[39].dt_txt);
+           $("#day5-date").text("Date: " +json.list[39].dt_txt);
            $("#day5-icon").attr("src",  "http://openweathermap.org/img/w/" + json.list[39].weather[0].icon + ".png");
-           $("#day5-temp").text(json.list[39].main.temp)
-           $("#day5-humidity").text(json.list[39].main.humidity)
+           $("#day5-temp").text("Temp: "+ json.list[39].main.temp + " °F")
+           $("#day5-humidity").text("Humidity: " +json.list[39].main.humidity +" %")
 
       }
      
@@ -71,6 +71,9 @@ $(".query_btn").on("click",function(){
     })
     });
     
+ 
+
+   
     var fahrenheit = true;
 
     $("#convert-to-celsius").click(function() {
