@@ -1,4 +1,3 @@
-console.log("hello")
 
  var appID = "80b3e8a297999f6bc99d97f895ecd144"
 
@@ -9,12 +8,6 @@ console.log("hello")
  var query_param;
  var defaultCity = "new york"
 
-//screen always have default city
-var currentHour = moment().format('LT');
-var now = moment().format('LLL');
-console.log(now)
-$("#current-date").text(" "+now)
-
  deFault ()
  
 
@@ -22,8 +15,9 @@ $("#current-date").text(" "+now)
 
     if(defaultCity){
          weather ="http://api.openweathermap.org/data/2.5/weather?q=" +defaultCity +"&units=imperial"+"&appid=" + appID;
+       
         
-        forecast ="http://api.openweathermap.org/data/2.5/forecast?q=" +defaultCity+"&units=imperial"+"&APPID=" + appID;
+        forecast ="http://api.openweathermap.org/data/2.5/forecast?q=" + defaultCity+"&units=imperial"+"&APPID=" + appID;
 
         getWeatherData()
         getForecastData()
@@ -39,9 +33,11 @@ $(".query_btn").on("click",function(){
          
          weather ="http://api.openweathermap.org/data/2.5/weather?q=" + query_param +"&units=imperial"+"&appid=" + appID;
 
+         console.log(weather)
+
          forecast ="http://api.openweathermap.org/data/2.5/forecast?q=" + query_param +"&units=imperial"+"&APPID=" + appID;
        
-       
+  
         getWeatherData()
         getForecastData()
     }
@@ -72,8 +68,11 @@ function  getWeatherData() {
     $.getJSON(weather, function(json){
 
          weather ="http://api.openweathermap.org/data/2.5/weather?q=" + query_param +"&units=imperial"+"&appid=" + appID;
-       
+
+         renderDate()
+         
         $("#city").text(json.name);
+        $("#country").text(" ," + json.sys.country);
         $("#main_weather").text(json.weather[0].main);
         $("#description_weather").text(json.weather[0].description);
         $("#weather_image").attr("src", "http://openweathermap.org/img/w/" + json.weather[0].icon + ".png");
@@ -83,6 +82,25 @@ function  getWeatherData() {
     })
 }
 
+function dateBuilder(d){
+
+    var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    var day = days[d.getDay()];
+    var date = d.getDate();
+    var month = months[d.getMonth()];
+    var year = d.getFullYear() 
+
+    return `${day} ${date} ${month} ${year} `
+}
+
+function renderDate(){
+    var now = new Date();
+    var date = document.querySelector("#current-date");
+    date.innerHTML = dateBuilder(now)
+}
+
+
 function  getZipcodeWeatherData() {
     $.getJSON(zipCodeweather, function(json){
          
@@ -90,6 +108,7 @@ function  getZipcodeWeatherData() {
         
        
         $("#city").text(json.name);
+        $("#country").text(" ," + json.sys.country);
         $("#main_weather").text(json.weather[0].main);
         $("#description_weather").text(json.weather[0].description);
         $("#weather_image").attr("src", "http://openweathermap.org/img/w/" + json.weather[0].icon + ".png");
