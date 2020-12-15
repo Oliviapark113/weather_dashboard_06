@@ -35,7 +35,7 @@ body{
     flex-direction: column;
     margin-top: 10px;
     padding:0px;
-    align-items: center;
+    width: 100%;
 
 }
 
@@ -116,6 +116,10 @@ body{
     transition: 0.2s ease-out;
 
 }
+#uv-index{
+    padding: 8px;
+    border-radius: 5px;
+}
 
 
 .daily{
@@ -128,3 +132,14 @@ body{
  
 
 }
+
+@media only screen and (max-width: 857px) {
+    body {
+      height: 100%;
+    }
+   
+
+    .input-container input{
+        width: 100%;
+    }
+  }

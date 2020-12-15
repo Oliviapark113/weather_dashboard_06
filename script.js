@@ -1,12 +1,17 @@
 
  var appID = "80b3e8a297999f6bc99d97f895ecd144"
 
+
 //set global variable..
  var weather ;
  var forecast ;
  var zipCodeweather;
  var query_param;
+ var currentLocation;
  var defaultCity = "new york"
+ var lat;
+ var lon;
+ var uvIndexspan = $("#uv-index")
 
  deFault ()
  
@@ -33,11 +38,11 @@ $(".query_btn").on("click",function(){
          
          weather ="http://api.openweathermap.org/data/2.5/weather?q=" + query_param +"&units=imperial"+"&appid=" + appID;
 
-         console.log(weather)
+      
 
          forecast ="http://api.openweathermap.org/data/2.5/forecast?q=" + query_param +"&units=imperial"+"&APPID=" + appID;
-       
-  
+
+
         getWeatherData()
         getForecastData()
     }
@@ -61,6 +66,9 @@ $(".othercities").on("click", function(){
     
     getWeatherData()
     getForecastData()
+    // lat = json.coord.lat;
+    // lon = json.coord.lon;
+    // getUVData()
 
 })
 
@@ -69,18 +77,54 @@ function  getWeatherData() {
 
          weather ="http://api.openweathermap.org/data/2.5/weather?q=" + query_param +"&units=imperial"+"&appid=" + appID;
 
+
+         lat = json.coord.lat;
+         lon = json.coord.lon;
+         getUVData()
          renderDate()
-         
+
         $("#city").text(json.name);
         $("#country").text(" ," + json.sys.country);
         $("#main_weather").text(json.weather[0].main);
         $("#description_weather").text(json.weather[0].description);
         $("#weather_image").attr("src", "http://openweathermap.org/img/w/" + json.weather[0].icon + ".png");
         $("#temperature").text(json.main.temp);
-        $("#pressure").text(json.main.pressure);
+        $("#wind-speed").text(json.wind.speed);
         $("#humidity").text(json.main.humidity);
+
     })
 }
+
+
+function getUVData(){
+     
+    var uvEndpoint = "http://api.openweathermap.org/data/2.5/uvi?lat="+lat+"&lon="+lon+"&appid="+appID
+
+    $.getJSON(uvEndpoint, function(uvdata){
+        console.log(uvdata)
+        console.log(uvdata.value)
+      uvIndexspan.text(uvdata.value)
+      if(uvdata.value <= 2){
+          uvIndexspan .addClass("bg-success")
+      }
+      else if(2 < uvdata.value && uvdata.value <= 5 ){
+        uvIndexspan.addClass("bg-warning")
+      }
+
+      else if(6 < uvdata.value && uvdata.value <= 7 ){
+        uvIndexspan.addClass("bg-orange")
+      }
+
+      else if(8 < uvdata.value && uvdata.value <= 10 ){
+        uvIndexspan.addClass("bg-danger")
+      }
+
+    })
+
+    
+}
+
+
 
 function dateBuilder(d){
 
@@ -106,6 +150,9 @@ function  getZipcodeWeatherData() {
          
         zipCodeweather ="http://api.openweathermap.org/data/2.5/weather?zip=" + query_param +"&units=imperial"+"&appid=" + appID;
         
+        lat = json.coord.lat;
+        lon = json.coord.lon;
+        getUVData()
        
         $("#city").text(json.name);
         $("#country").text(" ," + json.sys.country);
@@ -113,7 +160,7 @@ function  getZipcodeWeatherData() {
         $("#description_weather").text(json.weather[0].description);
         $("#weather_image").attr("src", "http://openweathermap.org/img/w/" + json.weather[0].icon + ".png");
         $("#temperature").text(json.main.temp);
-        $("#pressure").text(json.main.pressure);
+        $("#wind-speed").text(json.wind.speed);
         $("#humidity").text(json.main.humidity);
     })
 }
