@@ -95,7 +95,7 @@ function  getWeatherData() {
         $("#country").text(" ," + json.sys.country);
         $("#main_weather").text(json.weather[0].main);
         $("#description_weather").text(json.weather[0].description);
-        $("#weather_image").attr("src", "http://openweathermap.org/img/w/" + json.weather[0].icon + ".png");
+        $("#weather_image").attr("src", "https://openweathermap.org/img/w/" + json.weather[0].icon + ".png");
         $("#temperature").text(json.main.temp);
         $("#wind-speed").text(json.wind.speed);
         $("#humidity").text(json.main.humidity);
