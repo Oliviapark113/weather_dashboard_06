@@ -22,7 +22,7 @@
          weather ="http://api.openweathermap.org/data/2.5/weather?q=" +cityVariable +"&units=imperial"+"&appid=" + appID;
        
         
-        forecast ="http://api.openweathermap.org/data/2.5/forecast?q=" +cityVariable+"&units=imperial"+"&APPID=" + appID;
+        forecast ="http://api.openweathermap.org/data/2.5/forecast?q=" +cityVariable+"&units=imperial"+"&appid=" + appID;
 
         getWeatherData()
         getForecastData()
@@ -43,7 +43,7 @@ $(".query_btn").on("click",function(){
          
          weather ="http://api.openweathermap.org/data/2.5/weather?q=" + query_param +"&units=imperial"+"&appid=" + appID;
 
-         forecast ="http://api.openweathermap.org/data/2.5/forecast?q=" + query_param +"&units=imperial"+"&APPID=" + appID;
+         forecast ="http://api.openweathermap.org/data/2.5/forecast?q=" + query_param +"&units=imperial"+"&appid=" + appID;
 
         getWeatherData()
         getForecastData()
@@ -52,7 +52,7 @@ $(".query_btn").on("click",function(){
     else if($(this).prev().attr("placeholder")=="Zip Code"){
          zipCodeweather ="http://api.openweathermap.org/data/2.5/weather?zip=" + query_param +"&units=imperial"+"&appid=" + appID;
 
-         forecast ="http://api.openweathermap.org/data/2.5/forecast?q=" + query_param +"&units=imperial"+"&APPID=" + appID;
+         forecast ="http://api.openweathermap.org/data/2.5/forecast?q=" + query_param +"&units=imperial"+"&appid=" + appID;
         
         getZipcodeWeatherData()
         getForecastData()
@@ -69,7 +69,7 @@ $(".othercities").on("click", function(){
 
     weather ="http://api.openweathermap.org/data/2.5/weather?q=" + cityInfo +"&units=imperial"+"&appid=" + appID;
 
-    forecast ="http://api.openweathermap.org/data/2.5/forecast?q=" + cityInfo +"&units=imperial"+"&APPID=" + appID;
+    forecast ="http://api.openweathermap.org/data/2.5/forecast?q=" + cityInfo +"&units=imperial"+"&appid=" + appID;
     
     getWeatherData()
     getForecastData()
@@ -177,7 +177,7 @@ function  getZipcodeWeatherData() {
 function getForecastData(){
     $.getJSON(forecast, function(json){
 
-         forecast ="http://api.openweathermap.org/data/2.5/forecast?q=" + query_param +"&units=imperial"+"&APPID=" + appID;
+         forecast ="http://api.openweathermap.org/data/2.5/forecast?q=" + query_param +"&units=imperial"+"&appid=" + appID;
           
       for (var i=7; i<json.list.length; i+=8 ){
        
