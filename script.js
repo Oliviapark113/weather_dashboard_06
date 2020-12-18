@@ -12,17 +12,18 @@
  var lat;
  var lon;
  var uvIndexspan = $("#uv-index")
+ var cityVariable = localStorage.getItem("cities") || []
 
- deFault ()
+ lastSavedcity ()
  
 
- function deFault () {
+ function lastSavedcity() {
 
-    if(defaultCity){
-         weather ="http://api.openweathermap.org/data/2.5/weather?q=" +defaultCity +"&units=imperial"+"&appid=" + appID;
+    if(cityVariable){
+         weather ="http://api.openweathermap.org/data/2.5/weather?q=" +cityVariable +"&units=imperial"+"&appid=" + appID;
        
         
-        forecast ="http://api.openweathermap.org/data/2.5/forecast?q=" + defaultCity+"&units=imperial"+"&APPID=" + appID;
+        forecast ="http://api.openweathermap.org/data/2.5/forecast?q=" +cityVariable+"&units=imperial"+"&APPID=" + appID;
 
         getWeatherData()
         getForecastData()
@@ -30,22 +31,27 @@
 
  }
 
+
+ 
+
+
+
 $(".query_btn").on("click",function(){
 
      query_param =$(this).prev().val();
+
+     localStorage.clear()
 
     if($(this).prev().attr("placeholder") == "City"){
          
          weather ="http://api.openweathermap.org/data/2.5/weather?q=" + query_param +"&units=imperial"+"&appid=" + appID;
 
-      
-
          forecast ="http://api.openweathermap.org/data/2.5/forecast?q=" + query_param +"&units=imperial"+"&APPID=" + appID;
-
 
         getWeatherData()
         getForecastData()
     }
+
     else if($(this).prev().attr("placeholder")=="Zip Code"){
          zipCodeweather ="http://api.openweathermap.org/data/2.5/weather?zip=" + query_param +"&units=imperial"+"&appid=" + appID;
 
@@ -54,6 +60,10 @@ $(".query_btn").on("click",function(){
         getZipcodeWeatherData()
         getForecastData()
     }
+
+  
+   localStorage.setItem('cities', query_param)
+ 
 });
 
 $(".othercities").on("click", function(){
@@ -66,6 +76,7 @@ $(".othercities").on("click", function(){
     
     getWeatherData()
     getForecastData()
+    localStorage.setItem('cities', cityInfo)
     
 
 
