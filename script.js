@@ -31,9 +31,7 @@
 
  }
 
-
  
-
 
 
 $(".query_btn").on("click",function(){
