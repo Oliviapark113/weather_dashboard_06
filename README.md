@@ -40,6 +40,4 @@ by saving last citi into local Storage .
 <img width="1175" alt="Screen Shot 2020-12-17 at 10 33 46 AM" src="https://user-images.githubusercontent.com/70460020/102508726-bd75a880-4053-11eb-9099-fd20db7e1892.png">
 
 
-<img width="462" alt="Screen Shot 2020-12-17 at 10 34 32 AM" src="https://user-images.githubusercontent.com/70460020/102508848-ded69480-4053-11eb-84a5-595b7f115570.png">
 
-<img width="462" alt="Screen Shot 2020-12-17 at 10 34 38 AM" src="https://user-images.githubusercontent.com/70460020/102508857-e007c180-4053-11eb-99a4-d0bc728f2d1f.png">
