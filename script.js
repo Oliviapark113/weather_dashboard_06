@@ -66,9 +66,8 @@ $(".othercities").on("click", function(){
     
     getWeatherData()
     getForecastData()
-    // lat = json.coord.lat;
-    // lon = json.coord.lon;
-    // getUVData()
+    
+
 
 })
 
@@ -101,10 +100,12 @@ function getUVData(){
     var uvEndpoint = "http://api.openweathermap.org/data/2.5/uvi?lat="+lat+"&lon="+lon+"&appid="+appID
 
     $.getJSON(uvEndpoint, function(uvdata){
-        console.log(uvdata)
-        console.log(uvdata.value)
+     
       uvIndexspan.text(uvdata.value)
+      uvIndexspan .attr("class", "")
+
       if(uvdata.value <= 2){
+          
           uvIndexspan .addClass("bg-success")
       }
       else if(2 < uvdata.value && uvdata.value <= 5 ){
