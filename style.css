@@ -140,9 +140,55 @@ body{
     body {
       height: 100%;
     }
-   
+
+    
 
     .input-container input{
         width: 100%;
+    }
+
+
+.city-weather-container {
+    padding:20px;
+    margin: auto;
+ 
+}
+
+#weather_image{
+    display: block;
+    margin:auto;
+}
+
+#convert-to-celsius,
+#convert-to-fahrenheit{
+    display: block;
+    margin:10px auto 10px auto;
+    width: 80%;
+}
+
+.forecast-container {
+    padding:0px;
+    margin:auto;
+}
+
+h5{
+    text-align: center;
+    padding: 10px;
+
+}
+
+    .dailyrow{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width:100%;
+        margin: auto;
+        padding:0;
+
+    }
+
+    .daily{
+        text-align: center;
     }
   }
