@@ -7,7 +7,9 @@ body{
   color:#fafafa;
   box-sizing: border-box;
 
+
 }
+
 
 .navbar{
     padding: 10px;
@@ -17,14 +19,15 @@ body{
 
 .navbar h1{
   color: #fafafa;
-  text-align: center;
+  display: block;
+  margin: auto;
   
  
 }
 
 
 .container{
-    margin: 10px;
+    margin: 10px auto 10px auto;
     display: flex;
     justify-content: center;
     align-items: center;
